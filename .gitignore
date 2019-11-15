@@ -1,0 +1,10 @@
+node_modules
+.idea
+coverage
+.nyc_output
+.DS_Store
+*.log
+*.key
+test/resources
+components/database/mysql/config
+.jsipfs-test
