@@ -80,6 +80,15 @@ export default {
       // shimScriptAccess: 'always',
       success: (mediaElement, originalNode, instance) => {
         console.log('success', componentObject.source);
+
+        setTimeout(() => {
+          document.querySelectorAll('.mejs__overlay-play .mejs__overlay-button')[0].addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            instance.play();
+          })
+        }, 500);
+        
         instance.setSrc(componentObject.source);
         if (componentObject.autoplay) {
           mediaElement.addEventListener('canplay', function () {
