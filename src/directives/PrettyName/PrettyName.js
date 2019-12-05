@@ -24,9 +24,13 @@ export default {
       if (!this.name) {
         return '';
       }
-      const dotIndex = lastIndexOf(this.name, '.');
+      let dotIndex = lastIndexOf(this.name, '.');
       let cutContentLength = 10;
       let endChars = 4;
+
+      if(cutContentLength > this.name.length && dotIndex === -1) {
+        dotIndex = this.name.length - 4;
+      }
       if (dotIndex <= cutContentLength) {
         return this.name;
       }
