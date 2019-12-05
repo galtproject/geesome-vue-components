@@ -92,7 +92,7 @@ export default class Helper {
       return mDate.fromNow();
   }
 
-  static beautyPeriod(period, unit: any = "seconds") {
+  static beautyPeriod(period, unit = "seconds") {
     var eventMDuration = moment.duration(parseInt(period), unit);
     var eventDurationArray = [];
     if (eventMDuration.years() > 0) {
