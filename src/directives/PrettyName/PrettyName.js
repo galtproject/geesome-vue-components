@@ -28,7 +28,7 @@ export default {
       let cutContentLength = 10;
       let endChars = 4;
 
-      if(cutContentLength > this.name.length && dotIndex === -1) {
+      if(this.name.length > cutContentLength && dotIndex === -1) {
         dotIndex = this.name.length - 4;
       }
       if (dotIndex <= cutContentLength) {
