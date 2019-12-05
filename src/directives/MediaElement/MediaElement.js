@@ -88,7 +88,7 @@ export default {
             instance.play();
           })
         }, 500);
-        
+
         instance.setSrc(componentObject.source);
         if (componentObject.autoplay) {
           mediaElement.addEventListener('canplay', function () {
