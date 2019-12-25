@@ -79,29 +79,22 @@ export default {
       // (by default, this is set as `sameDomain`)
       // shimScriptAccess: 'always',
       success: (mediaElement, originalNode, instance) => {
-        console.log('success', componentObject.source);
-
-        setTimeout(() => {
-          document.querySelectorAll('.mejs__overlay-play .mejs__overlay-button')[0].addEventListener('click', e => {
+        // console.log('success', mediaElement, componentObject.source);
+//
+        mediaElement.addEventListener('rendererready', function(e) {
+          mediaElement.parentElement.parentElement.querySelectorAll('.mejs__overlay-play .mejs__overlay-button')[0].addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             instance.play();
-          })
-        }, 500);
+          });
+          if (componentObject.autoplay) {
+            instance.play();
+          }
+        });
 
         instance.setSrc(componentObject.source);
-        if (componentObject.autoplay) {
-          mediaElement.addEventListener('canplay', function () {
-            instance.play();
-          });
-        }
+
         this.success(mediaElement, originalNode, instance);
-        // mediaElement.addEventListener(Hls.Events.MEDIA_ATTACHED, function () {
-        //   // All the code when this event is reached...
-        //   console.log('Media attached!');
-        // });
-        // mediaElement.setSrc(this.source);
-        // mediaElement.play();
       },
       error: (e) => {
         this.error(e);

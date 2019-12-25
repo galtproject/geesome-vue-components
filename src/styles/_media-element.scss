@@ -89,3 +89,7 @@ mediaelementwrapper object {
     }
   }
 }
+
+.media-video > video {
+  display: none;
+}
