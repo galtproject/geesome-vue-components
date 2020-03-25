@@ -9,7 +9,7 @@
 
 import MediaElement from "../MediaElement/MediaElement";
 import PrettyName from "../PrettyName/PrettyName");
-import ImageModal from "../../modals/ImageModal/ImageModal";
+import ImageModal from "../../modals/MediaModal/MediaModal";
 
 const fileSaver = require('file-saver');
 const mime = require('mime/lite');

@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright ©️ 2019 GaltProject Society Construction and Terraforming Company
+  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka)
+  ~
+  ~ Copyright ©️ 2019 Galt•Core Blockchain Company
+  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+  ~ [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+  -->
+
+<modal-item class="large-modal geesome-media-modal">
+  <template slot="header">
+    <md-button class="md-icon-button close" @click="close">
+      <md-icon>clear</md-icon>
+    </md-button>
+  </template>
+
+  <div class="modal-body" slot="body">
+    <div class="geesome-media-content">
+      <div v-if="notFound">Not found</div>
+
+      <div v-if="currentInfo && currentInfo.mimeType.indexOf('image') !== -1" class="media-image" :style="{'background-image': 'url(' + (linksArray ? currentLink : 'undefined') + ')' }"></div>
+      <div v-if="currentInfo && currentInfo.mimeType.indexOf('video') !== -1" class="media-video">
+        <media-element v-if="currentLink && currentPreview" :source="currentLink + '.' + currentInfo.extension" :preview="currentPreview"></media-element>
+      </div>
+
+      <img v-if="nextLink" class="next-preview" :src="nextLink">
+
+      <div class="slider-controls">
+        <button class="left-arrow" @click.prevent.stop="prev()" v-if="mediaArray[currentIndex - 1]"></button>
+        <button class="right-arrow" @click.prevent.stop="next()" v-if="mediaArray[currentIndex + 1]"></button>
+        <div class="dots" v-if="mediaArray">
+          <button v-for="(mediaItem, index) in mediaArray" v-if="index < 12" @click.prevent.stop="setIndex(index)"
+                  :class="{'active': index === currentIndex}"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</modal-item>
