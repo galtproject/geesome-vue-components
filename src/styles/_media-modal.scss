@@ -1,0 +1,144 @@
+.geesome-media-modal {
+  $height: 82vh;
+  .modal-content {
+    padding: 0;
+    border: none;
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .next-preview {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .media-container {
+    height: $height;
+    display: flex;
+    justify-content: center;
+    background: #1A1728;
+    padding: 30px;
+    padding-bottom: 50px;
+
+    .media-content {
+      & > * {
+        height: 100%;
+        margin: auto;
+        display: block;
+        background-size: contain;
+        max-height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 90%;
+        .mejs__video, .mejs__video .mejs__inner {
+          height: 100%;
+        }
+      }
+    }
+
+    .slider-controls {
+      //height: 80%;
+      position: absolute;
+      z-index: 90;
+      left: 0;
+      top: 0;
+      //bottom: 0;
+      right: 0;
+
+      .left-arrow, .right-arrow {
+        position: absolute;
+        cursor: pointer;
+        top: calc(#{$height} / 2 - 25px);
+        border: none;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .left-arrow {
+        left: 40px;
+        background-image: url("images/active-circle-slider-arrow.png");
+      }
+
+      .right-arrow {
+        right: 40px;
+        background-image: url("images/active-circle-slider-arrow.png");
+        transform: scaleX(-1);
+      }
+
+      .dots {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: calc(#{$height} - 30px);
+        //bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > * {
+          border: none;
+          cursor: pointer;
+          background-color: white;
+          height: 6px;
+          width: 6px;
+          border-radius: 100%;
+          transition: all 150ms linear 0s;
+          margin: 2px;
+          padding: 0;
+
+          &.active {
+            height: 8px;
+            width: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 750px) {
+  .geesome-media-modal {
+    $height: 50vh;
+    .modal-dialog {
+      margin-top: 100px;
+    }
+    .modal-content {
+      padding: 0;
+    }
+    .media-container {
+      height: $height;
+      padding: 42px 0;
+      .media-content {
+        & > * {
+          width: 100%;
+        }
+      }
+      .slider-controls {
+        .dots {
+          top: calc(#{$height} - 30px);
+        }
+        .left-arrow, .right-arrow {
+          height: 50vh;
+          background-size: 40px;
+          top: 0;
+          width: 80px;
+        }
+        .right-arrow {
+          right: 0;
+        }
+        .left-arrow {
+          left: 0;
+        }
+      }
+    }
+  }
+}
