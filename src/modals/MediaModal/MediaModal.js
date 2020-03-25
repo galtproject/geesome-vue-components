@@ -73,7 +73,7 @@ export default {
     },
 
     async close() {
-      this.$root.$asyncModal.close('image-modal');
+      this.$root.$asyncModal.close('geesome-media-modal');
     }
   },
 
