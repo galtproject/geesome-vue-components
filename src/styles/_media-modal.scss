@@ -110,33 +110,33 @@
     $height: 50vh;
     .modal-dialog {
       margin-top: 100px;
-    }
-    .modal-content {
-      padding: 0;
-    }
-    .media-container {
-      height: $height;
-      padding: 42px 0;
-      .media-content {
-        & > * {
-          width: 100%;
-        }
+      .modal-content {
+        padding: 0;
       }
-      .slider-controls {
-        .dots {
-          top: calc(#{$height} - 30px);
+      .media-container {
+        height: $height;
+        padding: 42px 0;
+        .media-content {
+          & > * {
+            width: 100%;
+          }
         }
-        .left-arrow, .right-arrow {
-          height: 50vh;
-          background-size: 40px;
-          top: 0;
-          width: 80px;
-        }
-        .right-arrow {
-          right: 0;
-        }
-        .left-arrow {
-          left: 0;
+        .slider-controls {
+          .dots {
+            top: calc(#{$height} - 30px);
+          }
+          .left-arrow, .right-arrow {
+            height: 50vh;
+            background-size: 40px;
+            top: 0;
+            width: 80px;
+          }
+          .right-arrow {
+            right: 0;
+          }
+          .left-arrow {
+            left: 0;
+          }
         }
       }
     }
