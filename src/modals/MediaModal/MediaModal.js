@@ -52,7 +52,7 @@ export default {
 
       if(manifest.mimeType.indexOf('video') !== -1) {
         this.linksArray[index] = await this.$geesome.getContentLink(manifest).catch(() => null);
-        this.previewsArray[index] = await this.$geesome.getContentLink(manifest, this.size).catch(() => null);
+        this.previewsArray[index] = await this.$geesome.getContentLink(manifest, this.size || 'large').catch(() => null);
       } else {
         this.linksArray[index] = await this.$geesome.getContentLink(manifest, this.size).catch(() => null);
         this.previewsArray[index] = clone(this.linksArray[index]);
