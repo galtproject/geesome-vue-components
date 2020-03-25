@@ -17,12 +17,15 @@ const isObject = require('lodash/isObject');
 
 export default {
   template: require('./MediaModal.html'),
-  props: ['mediaArray', 'size'],
+  props: ['mediaArray', 'startIndex', 'size'],
   components: {
     ModalItem,
     MediaElement
   },
   created() {
+    if(this.startIndex) {
+      this.currentIndex = this.startIndex;
+    }
     this._getActualMediaLinkDebounce = debounce(() => {
       this.getActualMediaLink();
     }, 300);
