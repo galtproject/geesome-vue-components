@@ -8,7 +8,7 @@
  */
 
 import MediaElement from "../MediaElement/MediaElement";
-import PrettyName from "../PrettyName/PrettyName");
+import PrettyName from "../PrettyName/PrettyName";
 import ImageModal from "../../modals/MediaModal/MediaModal";
 
 const fileSaver = require('file-saver');
