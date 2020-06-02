@@ -19,7 +19,7 @@ const ipfsHelper = require('geesome-libs/src/ipfsHelper');
 
 export default {
   template: require('./ContentManifestItem.html'),
-  props: ['manifest', 'dbId', 'previewMode'],
+  props: ['manifest', 'dbId', 'previewMode', 'backgroundImageMode'],
   components: {MediaElement, PrettyName, ImageModal},
   async created() {
     this.setContent();

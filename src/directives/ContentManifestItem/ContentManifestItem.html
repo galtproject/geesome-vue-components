@@ -8,8 +8,11 @@
   -->
 
 <content>
-  <img v-if="type === 'image' && previewMode" :src="previewSrcLink">
-  <a v-if="type === 'image' && !previewMode" href @click.prevent="openImage"><img :src="previewSrcLink || srcLink"></a>
+  <img v-if="type === 'image' && previewMode && !backgroundImageMode" :src="previewSrcLink">
+  <a v-if="type === 'image' && !previewMode && !backgroundImageMode" href @click.prevent="openImage"><img :src="previewSrcLink || srcLink"></a>
+
+  <div v-if="type === 'image' && previewMode && backgroundImageMode" :style="{'background-image': 'url(' + previewSrcLink + ')'}"></div>
+  <div v-if="type === 'image' && !previewMode && backgroundImageMode" :style="{'background-image': 'url(' + (previewSrcLink || srcLink) + ')'}" @click.prevent="openImage"></div>
 
   <media-element v-if="type === 'video' && content" :source="content" :preview="previewSrcLink"></media-element>
   <span v-if="type === 'text' && content" v-html="content"></span>
