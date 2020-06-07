@@ -70,10 +70,10 @@ export default {
     // window.flvjs = flvjs;
     // window.Hls = hlsjs;
     const componentObject = this;
-    if(!this.$el) {
+    if(!this.$refs.video) {
       return console.warn('this.$el not found, MediaElementPlayer not initialized');
     }
-    this.player = new MediaElementPlayer(this.$el, {
+    this.player = new MediaElementPlayer(this.$refs.video, {
       // renderers: [''],
       pluginPath: 'build/',
       shimScriptAccess: 'always',
