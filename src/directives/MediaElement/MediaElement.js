@@ -70,6 +70,9 @@ export default {
     // window.flvjs = flvjs;
     // window.Hls = hlsjs;
     const componentObject = this;
+    if(!this.$el) {
+      return console.warn('this.$el not found, MediaElementPlayer not initialized');
+    }
     this.player = new MediaElementPlayer(this.$el, {
       // renderers: [''],
       pluginPath: 'build/',
@@ -108,7 +111,9 @@ export default {
       return mejs.Features[key];
     },
     remove() {
-      this.player.remove();
+      if(this.player) {
+        this.player.remove();
+      }
     }
   },
   beforeDestroy() {
