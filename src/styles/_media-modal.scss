@@ -34,8 +34,15 @@
         background-position: center;
         background-repeat: no-repeat;
         width: 90%;
-        .mejs__video, .mejs__video .mejs__inner {
-          height: 100%;
+
+        .mejs__video:not(.mejs__container-fullscreen),
+        .mejs__video,
+        .mejs__video .mejs__inner,
+        .mejs__mediaelement,
+        mediaelementwrapper,
+        mediaelementwrapper > div {
+          height: auto;
+          min-height: 100%;
         }
       }
     }
@@ -102,6 +109,7 @@
       }
     }
   }
+
 }
 
 
