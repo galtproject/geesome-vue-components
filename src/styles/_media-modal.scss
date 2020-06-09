@@ -57,7 +57,9 @@
       .left-arrow, .right-arrow {
         position: absolute;
         cursor: pointer;
-        top: calc(#{$height} / 2 - 25px);
+        top: initial;
+        bottom: 150px;
+        //top: calc(#{$height} / 2 - 25px);
         border: none;
         width: 40px;
         height: 40px;
