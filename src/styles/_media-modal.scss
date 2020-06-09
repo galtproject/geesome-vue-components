@@ -41,7 +41,7 @@
         .mejs__mediaelement,
         mediaelementwrapper,
         mediaelementwrapper > div {
-          height: auto;
+          height: auto !important;
           min-height: 100%;
         }
       }
