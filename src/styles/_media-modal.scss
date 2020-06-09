@@ -37,12 +37,14 @@
 
         .mejs__video:not(.mejs__container-fullscreen),
         .mejs__video,
-        .mejs__video .mejs__inner,
         .mejs__mediaelement,
         mediaelementwrapper,
         mediaelementwrapper > div {
           height: auto !important;
           min-height: 100%;
+        }
+        .mejs__video .mejs__inner {
+          height: initial;
         }
       }
     }
