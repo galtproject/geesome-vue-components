@@ -41,7 +41,7 @@
         mediaelementwrapper,
         mediaelementwrapper > div {
           height: auto !important;
-          min-height: 100%;
+          min-height: initial;
         }
         .mejs__video .mejs__inner {
           height: initial;

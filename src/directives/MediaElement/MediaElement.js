@@ -81,7 +81,6 @@ export default {
       poster: this.preview,
       preload: 'metadata',
       // (by default, this is set as `sameDomain`)
-      // shimScriptAccess: 'always',
       success: (mediaElement, originalNode, instance) => {
         // console.log('success', mediaElement, componentObject.source);
 //
