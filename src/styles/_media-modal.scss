@@ -2,11 +2,16 @@
   .modal-content {
     padding: 0;
     border: none;
-    background: transparent;
+    background: transparent !important;
+    box-shadow: none;
   }
 
   .modal-body {
     padding: 0;
+  }
+
+  .modal-dialog {
+    margin: 0;
   }
 
   .next-preview {
