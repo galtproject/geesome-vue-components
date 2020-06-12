@@ -57,7 +57,7 @@ export default {
 
       if( manifest.properties) {
         const mediaContainer = this.$refs.mediaContainer;
-        this.heightsArray[index] = manifest.properties.height / (manifest.properties.width / mediaContainer.offsetWidth);
+        this.heightsArray[index] = Math.round(manifest.properties.height / (manifest.properties.width / mediaContainer.offsetWidth));
         console.log('this.heightsArray[index]', this.heightsArray[index]);
       }
 
