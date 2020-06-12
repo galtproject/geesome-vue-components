@@ -51,6 +51,7 @@ export default {
       this.notFound = false;
       const manifest = isObject(this.mediaArray[index]) ? this.mediaArray[index] : await this.$geesome.getObject(this.mediaArray[index]);
 
+      console.log('manifest', manifest);
       this.infoArray[index] = manifest;
 
       if(manifest.mimeType.indexOf('video') !== -1) {

@@ -115,7 +115,7 @@ export default {
     remove() {
       console.log('this.player.remove', this.player);
       if(this.player) {
-        this.player.pause();
+        // this.player.pause();
         this.player.remove();
       }
     }
