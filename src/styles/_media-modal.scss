@@ -56,6 +56,10 @@
         background-repeat: no-repeat;
         width: 90%;
 
+        .media-image {
+          width: 100%;
+        }
+
         &,
         .media-video,
         .mejs__container,
