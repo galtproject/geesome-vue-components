@@ -46,6 +46,7 @@
     padding-bottom: 50px;
 
     .media-content {
+      position: relative;
       & > * {
         height: 100%;
         margin: auto;
@@ -79,69 +80,70 @@
           height: initial;
         }
       }
-    }
 
-    .slider-controls {
-      position: absolute;
-      bottom: 0;
-      z-index: 90;
-      left: 0;
-      right: 0;
-
-      .left-arrow, .right-arrow {
+      .slider-controls {
         position: absolute;
-        cursor: pointer;
-        top: initial;
-        bottom: 150px;
-        //top: calc(#{$height} / 2 - 25px);
-        border: none;
-        width: 40px;
-        height: 40px;
-        background-color: transparent;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .left-arrow {
-        left: 40px;
-        background-image: url("images/active-circle-slider-arrow.png");
-      }
-
-      .right-arrow {
-        right: 40px;
-        background-image: url("images/active-circle-slider-arrow.png");
-        transform: scaleX(-1);
-      }
-
-      .dots {
-        position: absolute;
-        right: 0;
+        bottom: 0;
+        z-index: 90;
         left: 0;
-        bottom: 130px;
-        //bottom: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        right: 0;
 
-        & > * {
-          border: none;
+        .left-arrow, .right-arrow {
+          position: absolute;
           cursor: pointer;
-          background-color: white;
-          height: 6px;
-          width: 6px;
-          border-radius: 100%;
-          transition: all 150ms linear 0s;
-          margin: 2px;
-          padding: 0;
+          top: initial;
+          bottom: 150px;
+          //top: calc(#{$height} / 2 - 25px);
+          border: none;
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
 
-          &.active {
-            height: 8px;
-            width: 8px;
+        .left-arrow {
+          left: 40px;
+          background-image: url("images/active-circle-slider-arrow.png");
+        }
+
+        .right-arrow {
+          right: 40px;
+          background-image: url("images/active-circle-slider-arrow.png");
+          transform: scaleX(-1);
+        }
+
+        .dots {
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 130px;
+          //bottom: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & > * {
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            height: 6px;
+            width: 6px;
+            border-radius: 100%;
+            transition: all 150ms linear 0s;
+            margin: 2px;
+            padding: 0;
+
+            &.active {
+              height: 8px;
+              width: 8px;
+            }
           }
         }
       }
     }
+
   }
 
 }
