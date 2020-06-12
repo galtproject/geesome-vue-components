@@ -21,7 +21,7 @@
       <div v-if="notFound">Not found</div>
 
       <div class="media-content" :style="{'max-height': heightsArray[currentIndex] + 'px'}">
-        <img v-if="currentInfo && currentInfo.mimeType.indexOf('image') !== -1" class="media-image" :src="(linksArray ? currentLink : 'undefined') + ')">
+        <img v-if="currentInfo && currentInfo.mimeType.indexOf('image') !== -1" class="media-image" :src="(linksArray ? currentLink : 'undefined')"/>
         <div v-if="currentInfo && currentInfo.mimeType.indexOf('video') !== -1" class="media-video">
           <media-element v-if="currentLink && currentPreview" :source="currentLink + '.' + currentInfo.extension" :preview="currentPreview" :autoplay="true" :height="heightsArray[currentIndex]"></media-element>
         </div>
