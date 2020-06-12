@@ -73,6 +73,7 @@ export default {
     if(!this.$refs.video) {
       return console.warn('this.$el not found, MediaElementPlayer not initialized');
     }
+    console.log('this.player = new MediaElementPlayer', this.$refs.video);
     this.player = new MediaElementPlayer(this.$refs.video, {
       // renderers: [''],
       pluginPath: 'build/',
@@ -90,9 +91,11 @@ export default {
             e.stopPropagation();
             instance.play();
           });
-          if (componentObject.autoplay) {
-            instance.play();
-          }
+          setTimeout(() => {
+            if (componentObject.autoplay) {
+              instance.play();
+            }
+          }, 500);
         });
 
         instance.setSrc(componentObject.source);
@@ -110,7 +113,9 @@ export default {
       return mejs.Features[key];
     },
     remove() {
+      console.log('this.player.remove', this.player);
       if(this.player) {
+        this.player.pause();
         this.player.remove();
       }
     }
