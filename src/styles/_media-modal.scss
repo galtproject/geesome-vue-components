@@ -9,6 +9,7 @@
   .modal-body {
     padding: 0;
     position: relative;
+    width: 100vw;
     .background {
       position: absolute;
       top: 0;
@@ -54,6 +55,13 @@
         background-position: center;
         background-repeat: no-repeat;
         width: 90%;
+
+        &,
+        .media-video,
+        .mejs__container,
+        .mejs__mediaelement {
+          max-height: 95vh;
+        }
 
         .mejs__video:not(.mejs__container-fullscreen),
         .mejs__video,

@@ -57,8 +57,9 @@ export default {
 
       if( manifest.properties) {
         const mediaContainer = this.$refs.mediaContainer;
-        this.heightsArray[index] = Math.round(manifest.properties.height / (manifest.properties.width / mediaContainer.offsetWidth)).toString();
-        console.log('this.heightsArray[index]', this.heightsArray[index]);
+        const height = Math.round(manifest.properties.height / (manifest.properties.width / mediaContainer.offsetWidth));
+        this.heightsArray[index] = (height > mediaContainer.offsetHeight ? mediaContainer.offsetHeight : height).toString();
+        console.log('this.heightsArray[index]', this.heightsArray[index], mediaContainer.offsetHeight);
       }
 
       if(manifest.mimeType.indexOf('video') !== -1) {
