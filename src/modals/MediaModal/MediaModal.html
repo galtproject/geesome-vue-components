@@ -17,11 +17,11 @@
   <div class="modal-body" slot="body">
     <div class="background" @click="close"></div>
 
-    <div class="media-container">
+    <div class="media-container" ref="mediaContainer">
       <div v-if="notFound">Not found</div>
 
       <div class="media-content">
-        <div v-if="currentInfo && currentInfo.mimeType.indexOf('image') !== -1" class="media-image" :style="{'background-image': 'url(' + (linksArray ? currentLink : 'undefined') + ')' }"></div>
+        <div v-if="currentInfo && currentInfo.mimeType.indexOf('image') !== -1" class="media-image" :style="{'background-image': 'url(' + (linksArray ? currentLink : 'undefined') + ')', 'height': heightsArray[currentIndex] }"></div>
         <div v-if="currentInfo && currentInfo.mimeType.indexOf('video') !== -1" class="media-video">
           <media-element v-if="currentLink && currentPreview" :source="currentLink + '.' + currentInfo.extension" :preview="currentPreview" :autoplay="true"></media-element>
         </div>

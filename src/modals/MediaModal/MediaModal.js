@@ -52,7 +52,10 @@ export default {
       const manifest = isObject(this.mediaArray[index]) ? this.mediaArray[index] : await this.$geesome.getObject(this.mediaArray[index]);
 
       console.log('manifest', manifest);
+      const mediaContainer = this.$refs.mediaContainer;
+
       this.infoArray[index] = manifest;
+      this.heightsArray[index] = manifest.height / (manifest.width / mediaContainer.offsetWidth);
 
       if(manifest.mimeType.indexOf('video') !== -1) {
         this.linksArray[index] = await this.$geesome.getContentLink(manifest).catch(() => null);
@@ -106,6 +109,7 @@ export default {
       linksArray: [],
       previewsArray: [],
       infoArray: [],
+      heightsArray: [],
       loading: true,
       notFound: false
     }
