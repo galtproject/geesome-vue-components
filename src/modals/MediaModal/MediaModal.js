@@ -58,6 +58,7 @@ export default {
       if( manifest.properties) {
         const mediaContainer = this.$refs.mediaContainer;
         this.heightsArray[index] = manifest.properties.height / (manifest.properties.width / mediaContainer.offsetWidth);
+        console.log('this.heightsArray[index]', this.heightsArray[index]);
       }
 
       if(manifest.mimeType.indexOf('video') !== -1) {
