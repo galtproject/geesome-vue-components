@@ -51,9 +51,9 @@ mediaelementwrapper object {
 }
 
 .mejs__video {
-  &, .mejs__inner {
-    min-height: 300px;
-  }
+  //&, .mejs__inner {
+  //  min-height: 300px;
+  //}
   &:not(.mejs__container-fullscreen) {
     height: auto !important;
     &, .mejs__overlay-play {
