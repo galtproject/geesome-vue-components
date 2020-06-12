@@ -47,7 +47,7 @@
 
     .media-content {
       position: relative;
-      & > * {
+      & > *:not(.slider-controls) {
         height: 100%;
         margin: auto;
         display: block;
@@ -92,7 +92,7 @@
           position: absolute;
           cursor: pointer;
           top: initial;
-          bottom: 150px;
+          bottom: 50px;
           //top: calc(#{$height} / 2 - 25px);
           border: none;
           width: 40px;
@@ -118,7 +118,7 @@
           position: absolute;
           right: 0;
           left: 0;
-          bottom: 130px;
+          bottom: 30px;
           //bottom: 5px;
           display: flex;
           justify-content: center;
@@ -160,13 +160,13 @@
       .media-container {
         padding: 42px 30px;
         .media-content {
-          & > * {
+          & > *:not(.slider-controls) {
             width: 100%;
           }
         }
         .slider-controls {
           .dots {
-            bottom: 100px;
+            bottom: 30px;
           }
           .left-arrow, .right-arrow {
             background-size: 40px;

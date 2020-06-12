@@ -26,7 +26,7 @@
           <media-element v-if="currentLink && currentPreview" :source="currentLink + '.' + currentInfo.extension" :preview="currentPreview" :autoplay="true" :height="heightsArray[currentIndex]"></media-element>
         </div>
 
-        <div class="slider-controls">
+        <div class="slider-controls" v-if="mediaArray.length > 1">
           <button class="left-arrow" @click.prevent.stop="prev()" v-if="mediaArray[currentIndex - 1]"></button>
           <button class="right-arrow" @click.prevent.stop="next()" v-if="mediaArray[currentIndex + 1]"></button>
           <div class="dots" v-if="mediaArray">
