@@ -1,8 +1,8 @@
 .geesome-media-modal {
-  $height: 82vh;
   .modal-content {
     padding: 0;
     border: none;
+    background: transparent;
   }
 
   .modal-body {
@@ -17,10 +17,12 @@
   }
 
   .media-container {
-    min-height: $height;
+    height: 100vh;
+    width: 100vw;
+    background: #1a1728cf;
     display: flex;
     justify-content: center;
-    background: #1A1728;
+    //background: #1A1728;
     padding: 30px;
     padding-bottom: 50px;
 
@@ -117,15 +119,14 @@
 
 @media (max-width: 750px) {
   .geesome-media-modal {
-    $height: 50vh;
     .modal-dialog {
-      margin-top: 100px;
+      margin-top: 0;
+
       .modal-content {
         padding: 0;
       }
       .media-container {
-        min-height: $height;
-        padding: 42px 0;
+        padding: 42px 30px;
         .media-content {
           & > * {
             width: 100%;
