@@ -67,10 +67,11 @@ export default {
       this.srcLink = await this.$geesome.getContentLink(this.manifestObj.storageId);
       this.previewSrcLink = await this.$geesome.getContentLink(this.manifestObj.preview ? this.manifestObj.preview.medium.storageId : null);
 
-      if (this.type == 'text') {
-        this.content = await this.$geesome.getContentData(this.contentId);
+      if (this.type === 'text') {
+        let content = await this.$geesome.getContentData(this.contentId);
+        this.content = content.split(' ').map(t => t.replace(/^(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.#-]*(\?\S+)?)?)?)/ig, "<a href=\"$1\" target=\"_blank\">$1</a>")).join(' ');
       }
-      if (this.type == 'image' || this.type == 'video' || this.type == 'audio' || this.type == 'file') {
+      if (this.type === 'image' || this.type === 'video' || this.type === 'audio' || this.type === 'file') {
         this.content = this.srcLink + '.' + this.manifestObj.extension;
       }
       this.loading = false;
