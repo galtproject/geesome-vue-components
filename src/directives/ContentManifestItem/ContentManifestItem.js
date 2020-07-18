@@ -68,8 +68,8 @@ export default {
       this.previewSrcLink = await this.$geesome.getContentLink(this.manifestObj.preview ? this.manifestObj.preview.medium.storageId : null);
 
       if (this.type === 'text') {
-        let content = await this.$geesome.getContentData(this.contentId);
-        this.content = content.split(' ').map(t => t.replace(/^(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.#-]*(\?\S+)?)?)?)/ig, "<a href=\"$1\" target=\"_blank\">$1</a>")).join(' ');
+        let content = (await this.$geesome.getContentData(this.contentId)) || '';
+        this.content = content.toString('utf-8').split(' ').map(t => t.replace(/^(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.#-]*(\?\S+)?)?)?)/ig, "<a href=\"$1\" target=\"_blank\">$1</a>")).join(' ');
       }
       if (this.type === 'image' || this.type === 'video' || this.type === 'audio' || this.type === 'file') {
         this.content = this.srcLink + '.' + this.manifestObj.extension;
