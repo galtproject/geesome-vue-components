@@ -12,6 +12,6 @@
     "lodash": "^2.0.2",
     "file-saver": "^2.0.2",
     "mime": "^2.4.3",
-    "mediaelement": "^4.2.9"
+    "mediaelement": "^4.2.16"
   }
 }
