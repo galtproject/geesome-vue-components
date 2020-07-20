@@ -85,7 +85,9 @@ export default {
       success: (mediaElement, originalNode, instance) => {
         console.log('success', mediaElement, componentObject.source);
 //
+        let renderReady = false;
         mediaElement.addEventListener('rendererready', function(e) {
+          renderReady = true;
           mediaElement.parentElement.parentElement.querySelectorAll('.mejs__overlay-play .mejs__overlay-button')[0].addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -98,6 +100,12 @@ export default {
             }
           }, 500);
         });
+
+        setTimeout(() => {
+          if(!renderReady) {
+            this.$refs.video.play();
+          }
+        }, 1000);
 
         instance.setSrc(componentObject.source);
 
