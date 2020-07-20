@@ -69,7 +69,11 @@ export default {
 
       if (this.type === 'text') {
         let content = (await this.$geesome.getContentData(this.contentId)) || '';
-        this.content = content.toString('utf-8').split(' ').map(t => t.replace(/^(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.#-]*(\?\S+)?)?)?)/ig, "<a href=\"$1\" target=\"_blank\">$1</a>")).join(' ');
+        try {
+          this.content = content.toString('utf-8').split(' ').map(t => t.replace(/^(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.#-]*(\?\S+)?)?)?)/ig, "<a href=\"$1\" target=\"_blank\">$1</a>")).join(' ');
+        } catch (e) {
+          this.content = content;
+        }
       }
       if (this.type === 'image' || this.type === 'video' || this.type === 'audio' || this.type === 'file') {
         this.content = this.srcLink + '.' + this.manifestObj.extension;
