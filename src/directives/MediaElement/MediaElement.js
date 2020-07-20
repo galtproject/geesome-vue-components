@@ -83,7 +83,7 @@ export default {
       preload: 'metadata',
       // (by default, this is set as `sameDomain`)
       success: (mediaElement, originalNode, instance) => {
-        // console.log('success', mediaElement, componentObject.source);
+        console.log('success', mediaElement, componentObject.source);
 //
         mediaElement.addEventListener('rendererready', function(e) {
           mediaElement.parentElement.parentElement.querySelectorAll('.mejs__overlay-play .mejs__overlay-button')[0].addEventListener('click', function(e) {
@@ -92,6 +92,7 @@ export default {
             instance.play();
           });
           setTimeout(() => {
+            console.log('componentObject.autoplay', componentObject.autoplay);
             if (componentObject.autoplay) {
               instance.play();
             }
