@@ -15,7 +15,8 @@
   <div v-if="type === 'image' && !previewMode && backgroundImageMode" class="content-image" :style="{'background-image': 'url(' + (previewSrcLink || srcLink) + ')'}" @click.prevent="openImage"></div>
 
   <media-element v-if="type === 'video' && content" :source="content" :preview="previewSrcLink"></media-element>
-  <span v-if="type === 'text' && content" v-html="content"></span>
+  <span v-if="type === 'text' && content && !pre" v-html="content"></span>
+  <pre v-if="type === 'text' && content && pre" v-html="content"></pre>
 
   <div class="md-layout" v-if="type === 'file'" style="align-items: center;">
     <div :class="{'md-layout-item': true, 'md-size-10': !previewMode, 'md-size-100': previewMode}"
