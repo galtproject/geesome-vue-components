@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka)
+  ~
+  ~ Copyright ©️ 2020 Galt•Core Blockchain Company
+  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+  ~ [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+  -->
+
+<div style="display: flex;" class="gafc-pagination">
+    <md-button
+            :class="{'md-icon-button': true, 'md-raised md-accent': page.number == currentPage && page.type === 'regular'}"
+            v-for="page in pagesButtons"
+            :page-number="page.number"
+            @click="changePage(page.number)"
+            :disabled="page.disabled">
+        <span v-if="page.type === 'regular'">{{page.number}}</span>
+        <span v-if="page.type === 'dots'">...</span>
+        <span v-if="page.type === 'first'">＜＜</span>
+        <span v-if="page.type === 'last'">＞＞</span>
+    </md-button>
+</div>
+
