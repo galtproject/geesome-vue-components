@@ -10,6 +10,7 @@
 const isNumber = require('lodash/isNumber');
 const isDate = require('lodash/isDate');
 const isArray = require('lodash/isArray');
+const snakeCase = require('lodash/snakeCase');
 const Web3Utils = require('web3-utils');
 const isIPFS = require('is-ipfs');
 const bs58 = require('bs58');
@@ -203,5 +204,11 @@ export default class Helper {
       }
       return null;
     }
+  }
+  static humanizeKey(keyString) {
+    return Helper.upperFirst(snakeCase(keyString)).replace(/_/g, " ")
+  }
+  static upperFirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 }
