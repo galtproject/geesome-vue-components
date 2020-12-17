@@ -112,7 +112,7 @@ module.exports = function (options = {}) {
           },
             'extract-loader',
             // MiniCssExtractPlugin.loader,
-            'css-loader?-url&minimize',
+            'css-loader?-url',
             'postcss-loader',
             'sass-loader'
           ]
