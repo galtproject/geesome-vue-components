@@ -1,0 +1,47 @@
+/*!
+ * Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka)
+ *
+ * Copyright ©️ 2020 Galt•Core Blockchain Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+ * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+ */
+
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme("default", (
+        accent: #5132b1, // The primary color of your application
+        primary: #ec9227,
+        background: #241f44, //#19161C,
+  //background: #262429,
+  //accent: md-get-palette-color(red, A200), // The accent or secondary color
+        theme: dark // This can be dark or light
+));
+
+@import "~vue-material/dist/theme/all"; // Apply the theme
+
+.md-field.md-theme-default.md-invalid:before {
+  background-color: #ff1744;
+  background-color: var(--md-theme-default-fieldvariant, #ff1744);
+}
+.md-card.md-theme-default  {
+  background: #19161C !important; //#1c1640
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+
+.modal-content {
+  background: #241f44;
+}
+
+.md-tabs.md-theme-default .md-tabs-navigation {
+  background: #241f44;
+}
+
+a.icon-link:hover > i {
+  color: #ec9227 !important;
+}
+
+.content-accent {
+  background: #212121;
+}

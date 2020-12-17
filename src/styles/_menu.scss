@@ -1,0 +1,49 @@
+/*!
+ * Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka)
+ *
+ * Copyright ©️ 2020 Galt•Core Blockchain Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+ * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+ */
+
+.user-menu {
+  left: auto !important;
+  right: 10px !important;
+  max-width: 480px;
+  top: 50px !important;
+
+  .md-menu-content-container > ul > div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 12px;
+  }
+}
+
+.info-menu {
+  max-width: 400px;
+  .md-menu-content-container > ul > div {
+    padding: 0 12px;
+    white-space: normal;
+  }
+}
+
+.account-menu {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 12px;
+}
+.md-menu-content.md-select-menu {
+  z-index: 1200;
+}
+
+.md-menu-content {
+  z-index: 9999;
+  display: block !important;
+}
+
+.md-menu-content-container h4 {
+  margin: 5px 15px;
+}

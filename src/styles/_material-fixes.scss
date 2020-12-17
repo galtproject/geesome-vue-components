@@ -1,0 +1,171 @@
+/*!
+ * Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka)
+ *
+ * Copyright ©️ 2020 Galt•Core Blockchain Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+ * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+ */
+
+.md-list-item-content > .md-progress-bar {
+  height: 5px;
+  width: 100%;
+}
+.md-tabs-navigation > .router-link-exact-active, .simple-tabs .md-button.md-active {
+  border-bottom: 2px solid #ec9227;
+  .md-button-content {
+    color: #ec9227;
+  }
+}
+.md-tabs.md-theme-default .md-tabs-indicator {
+  display: none;
+}
+.md-table-cell-container {
+  padding: 6px 15px 6px 15px;
+}
+.md-table-head-label {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.md-menu-content {
+  max-width: 350px;
+}
+.md-list-expand .md-list {
+  background: #2b2929;
+}
+.md-list-item.md-inset .md-list-item-content {
+  padding-left: 50px;
+  justify-content: flex-start;
+}
+.md-select-menu.md-menu-content {
+  width: auto;
+  max-width: 300px;
+}
+.md-list.md-single-line .md-list-item-content {
+  min-height: 48px;
+}
+.md-list-item-expand {
+  .md-list-item-text {
+    display: block;
+    & > * {
+      overflow: auto;
+      white-space: normal;
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+.md-card-content > .md-table {
+  &, & > .md-table-content {
+    background: transparent;
+  }
+}
+.md-menu-content-container {
+  background-color: var(--md-theme-default-background, #424242);
+  & > .md-list {
+    max-height: 300px;
+  }
+}
+
+.md-field.md-focused label,
+.md-field.md-has-value label {
+  pointer-events: auto;
+  top: 0;
+  opacity: 1;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.md-app-drawer {
+  position: relative;
+  transition: width 300ms linear, width 300ms ease-out;
+  max-width: 250px;
+
+  &:not(.md-active) {
+    top: -50px;
+  }
+}
+
+.md-menu-content-container .md-list-item-content {
+  justify-content: start;
+}
+
+.md-menu-content-container .md-list-item-content > .md-icon:first-child {
+  margin-right: 10px;
+  margin-left: 0;
+}
+.md-app-scroller {
+  padding: 0 !important;
+}
+.md-drawer.md-persistent-mini:not(.md-active) .md-toolbar {
+  display: block;
+}
+
+.md-icon.small-icon {
+  width: 15px;
+  min-width: 15px;
+  height: 15px;
+  font-size: 15px!important;
+}
+.md-icon-button.small-button {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  margin: 0 6px;
+  .md-icon {
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+    font-size: 15px!important;
+  }
+}
+
+.md-card-actions {
+  flex-wrap: wrap;
+}
+
+.md-app-side-drawer {
+  .md-list-item.sub-menu {
+    .md-list-item-content {
+      padding: 0 10px;
+      justify-content: flex-start;
+      min-height: 48px;
+      .md-list {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.md-datepicker-body-content {
+  max-height: 200px !important;
+}
+
+.md-field.md-theme-default.md-datepicker>.md-icon:after {
+  background: none;
+}
+
+a.icon-link, a.icon-link:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+a[onclick] {
+  cursor: pointer;
+}
+.md-field input[type="text"],
+.md-field input[type="password"] {
+  background: transparent !important;
+}
+.md-tabs-navigation {
+  & > * {
+    min-width: fit-content !important;
+    & > * {
+      min-width: fit-content !important;
+    }
+  }
+}
+
+.md-menu-content[style*="display: none"] .md-menu-content-container {
+  display: none;
+}

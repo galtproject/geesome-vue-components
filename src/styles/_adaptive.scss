@@ -1,0 +1,95 @@
+/*!
+ * Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka)
+ *
+ * Copyright ©️ 2020 Galt•Core Blockchain Company
+ * (Founded by [Nikolai Popeka](https://github.com/npopeka) by
+ * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
+ */
+
+
+.md-xsmall-show {
+  display: none;
+}
+.md-not-xsmall-padding {
+  padding: 10px;
+}
+//xsmall
+@media (max-width: 600px) {
+  .md-xsmall-show {
+    display: block;
+  }
+  .md-xsmall-hide {
+    display: none !important;
+  }
+  .md-card-content {
+    position: relative;
+    padding: 10px;
+  }
+  .md-list.md-triple-line .md-list-item-content {
+    padding: 4px 5px;
+  }
+  .md-not-xsmall-padding {
+    padding: 0;
+  }
+  
+  .md-subheading {
+    font-size: 15px;
+  }
+  .md-list-item-container {
+    font-size: 14px;
+  }
+
+  .md-card-content,
+  .md-list-item-text :nth-child(2), 
+  .md-list-item-text :nth-child(3) {
+    font-size: 13px;
+  }
+  
+  .md-list-item.md-inset .md-list-item-content {
+    padding-left: 35px;
+  }
+  .primary-modal .modal-header .modal-title {
+    line-height: 1.4;
+  }
+  .primary-modal .modal-header {
+    padding: 10px;
+    .modal-title {
+      line-height: 0.5;
+      font-size: 15px;
+    }
+  }
+  .grey-description {
+    color: grey;
+    margin: 10px 0;
+    font-size: 10px;
+  }
+  .modal-body {
+    position: relative;
+    padding: 10px;
+  }
+  .md-body-1, body {
+    font-weight: 400;
+    line-height: 18px;
+  }
+  .md-card-content {
+    word-wrap: break-word;
+  }
+}
+
+.md-small-show {
+  display: none;
+}
+
+//small
+@media (max-width: 960px) {
+  .md-small-show {
+    display: block;
+  }
+  .md-small-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .md-card.md-theme-default {
+    margin-right: 0;
+  }
+}
