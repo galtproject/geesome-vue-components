@@ -159,7 +159,7 @@ module.exports = function (options = {}) {
     new CopyWebpackPlugin([
       "./CORS",
       {from: "./locale", to: "./locale"},
-      {from: "./node_modules/@galtproject/frontend-core/vendor/modernizr-custom.js", to: "./build/modernizr-custom.js"}
+      {from: "./node_modules/geesome-vue-components/vendor/modernizr-custom.js", to: "./build/modernizr-custom.js"}
     ].concat(options.copy || [])),
     new VueLoaderPlugin(),
     new webpack.DefinePlugin(defineNodeEnv),
