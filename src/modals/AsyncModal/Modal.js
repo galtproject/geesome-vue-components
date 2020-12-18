@@ -7,7 +7,7 @@
  * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
  */
 
-const Vue = require('vue');
+import Vue from 'vue';
 
 const {addClass, removeClass} = require('./utils');
 
