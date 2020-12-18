@@ -24,13 +24,9 @@ const NON_TRANSITION_ERR = 'this modal item is not a Vue component, you should u
 export default {
     template: require('./Modal.html'),
     beforeCreate() {
-        Vue.use({
-            install (Vue, options) {
-                Vue.prototype.$modal = {
-                    value: this,
-                    configurable: true
-                }
-            }
+        Object.defineProperty(Vue.prototype, '$modal', {
+            value: this,
+            configurable: true
         })
     },
     data() {
