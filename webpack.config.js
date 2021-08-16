@@ -1,8 +1,8 @@
 /*
- * Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
+ * Copyright ©️ 2021 GaltProject Society Construction and Terraforming Company
  * (Founded by [Nikolai Popeka](https://github.com/npopeka)
  *
- * Copyright ©️ 2020 Galt•Core Blockchain Company
+ * Copyright ©️ 2021 Galt•Core Blockchain Company
  * (Founded by [Nikolai Popeka](https://github.com/npopeka) by
  * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
  */
@@ -15,7 +15,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const JavaScriptObfuscator = require('javascript-obfuscator');
-const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
 const { DuplicatesPlugin } = require('inspectpack/plugin');
@@ -112,7 +111,7 @@ module.exports = function (options = {}) {
           },
             'extract-loader',
             // MiniCssExtractPlugin.loader,
-            'css-loader?-url',
+            'css-loader?-url&minimize',
             'postcss-loader',
             'sass-loader'
           ]
