@@ -166,7 +166,7 @@ module.exports = function (options = {}) {
     // new Visualizer({
     //   filename: './build/statistics.html'
     // })
-  ];
+  ].concat(options.plugins || []);
 
   if (webpackMode !== 'production') {
     plugins.push(new DuplicatesPlugin());
