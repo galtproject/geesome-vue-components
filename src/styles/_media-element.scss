@@ -7,7 +7,7 @@
  * [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
  */
 
-@import '~mediaelement/build/mediaelementplayer.min.css';
+@import 'node_modules/mediaelement/build/mediaelementplayer.min.css';
 
 .mejs__container {
   min-width: auto !important;
