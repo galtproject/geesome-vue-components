@@ -22,7 +22,7 @@ const DEFAULT_OPTIONS = {
 const NON_TRANSITION_ERR = 'this modal item is not a Vue component, you should use `transition` component and emit `after-leave` event';
 
 export default {
-    template: require('./Modal.html'),
+    template: require('./Modal.template'),
     beforeCreate() {
         Object.defineProperty(Vue.prototype, '$modal', {
             value: this,

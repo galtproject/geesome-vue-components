@@ -11,7 +11,7 @@ import Helper from "../../services/helper";
 
 export default {
   name: 'pretty-hex',
-  template: require('./PrettyHex.html'),
+  template: require('./PrettyHex.template'),
   props: ['hex', 'to', 'href', 'full', 'short', 'prefix', 'localePrefix', 'explorerAddressUrl', 'explorerTxUrl', 'highlightCurrentUser', 'hideExplorer'],
   created() {
     this.cutHex();

@@ -11,7 +11,7 @@ const {ModalItem} = require('../../modals/AsyncModal');
 const FileCatalog = require("../../directives/FileCatalog/FileCatalog");
 
 export default {
-  template: require('./ChooseContentsIdsModal.html'),
+  template: require('./ChooseContentsIdsModal.template'),
   props: [],
   components: {
     ModalItem,

@@ -13,7 +13,7 @@ import Helper from "../../services/helper";
 
 export default {
     name: 'pretty-doc',
-    template: require('./PrettyDoc.html'),
+    template: require('./PrettyDoc.template'),
     props: ['doc', 'disableLink'],
     created() {
         this.prettify();

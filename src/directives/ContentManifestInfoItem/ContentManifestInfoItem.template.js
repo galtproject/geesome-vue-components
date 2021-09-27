@@ -1,12 +1,4 @@
-<!--
-  ~ Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
-  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka)
-  ~
-  ~ Copyright ©️ 2020 Galt•Core Blockchain Company
-  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka) by
-  ~ [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
-  -->
-
+module.exports = `
 <div :class="{'content-manifest-info-item': true, 'mini-manifest-info': mini}">
   <md-progress-bar class="md-accent" md-mode="indeterminate" v-if="loading"></md-progress-bar>
 
@@ -47,3 +39,4 @@
     </div>
   </div>
 </div>
+`;

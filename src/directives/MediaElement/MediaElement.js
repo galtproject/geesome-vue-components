@@ -11,7 +11,7 @@ import 'mediaelement';
 
 export default {
   name: 'media-element',
-  template: require('./MediaElement.html'),
+  template: require('./MediaElement.template'),
   props: {
     source: {
       type: String,

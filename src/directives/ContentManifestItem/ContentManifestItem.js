@@ -18,7 +18,7 @@ const startsWith = require('lodash/startsWith');
 const ipfsHelper = require('geesome-libs/src/ipfsHelper');
 
 export default {
-  template: require('./ContentManifestItem.html'),
+  template: require('./ContentManifestItem.template'),
   props: ['manifest', 'dbId', 'previewMode', 'backgroundImageMode', 'pre'],
   components: {MediaElement, PrettyName, ImageModal},
   async created() {

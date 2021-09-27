@@ -9,7 +9,7 @@
 
 export default {
   name: 'pagination',
-  template: require('./Pagination.html'),
+  template: require('./Pagination.template'),
   props: ['total', 'perPage', 'currentPage', 'displayPages', 'displayPagesBefore', 'displayPagesAfter', 'showEdges'],
   created() {
     if (!this.currentPage) {

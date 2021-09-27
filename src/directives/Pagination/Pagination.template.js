@@ -1,12 +1,4 @@
-<!--
-  ~ Copyright ©️ 2020 GaltProject Society Construction and Terraforming Company
-  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka)
-  ~
-  ~ Copyright ©️ 2020 Galt•Core Blockchain Company
-  ~ (Founded by [Nikolai Popeka](https://github.com/npopeka) by
-  ~ [Basic Agreement](ipfs/QmaCiXUmSrP16Gz8Jdzq6AJESY1EAANmmwha15uR3c1bsS)).
-  -->
-
+module.exports = `
 <div style="display: flex;" class="gafc-pagination">
     <md-button
             :class="{'md-icon-button': true, 'md-raised md-accent': page.number == currentPage && page.type === 'regular'}"
@@ -20,4 +12,4 @@
         <span v-if="page.type === 'last'">＞＞</span>
     </md-button>
 </div>
-
+`;

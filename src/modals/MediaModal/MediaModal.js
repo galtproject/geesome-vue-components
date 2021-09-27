@@ -16,7 +16,7 @@ const debounce = require('lodash/debounce');
 const isObject = require('lodash/isObject');
 
 export default {
-  template: require('./MediaModal.html'),
+  template: require('./MediaModal.template'),
   props: ['mediaArray', 'startIndex', 'size'],
   components: {
     ModalItem,

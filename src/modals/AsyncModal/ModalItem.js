@@ -9,7 +9,7 @@
 
 export default {
     name: 'modal-item',
-    template: require('./ModalItem.html'),
+    template: require('./ModalItem.template'),
     props: {
         id: [Number, String],
         header: String,

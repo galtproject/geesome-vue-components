@@ -9,7 +9,7 @@
 
 export default {
     name: 'period-input',
-    template: require('./PeriodInput.html'),
+    template: require('./PeriodInput.template'),
     props: ['value', 'localeLabel'],
     async created() {
         await this.$locale.waitForLoad();

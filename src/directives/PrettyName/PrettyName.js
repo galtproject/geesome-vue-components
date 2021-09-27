@@ -12,7 +12,7 @@ import Helper from "../../services/helper";
 
 export default {
   name: 'pretty-name',
-  template: require('./PrettyName.html'),
+  template: require('./PrettyName.template'),
   props: ['name'],
   created() {
 
