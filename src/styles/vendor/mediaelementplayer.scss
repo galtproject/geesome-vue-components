@@ -138,7 +138,7 @@
 }
 
 .mejs__overlay-button {
-    background: url('node_modules/mediaelement/build/mejs-controls.svg') no-repeat;
+    background: url('#{$me-controls-path}/mejs-controls.svg') no-repeat;
     background-position: 0 -39px;
     height: 80px;
     width: 80px
@@ -156,7 +156,7 @@
 .mejs__overlay-loading-bg-img {
     -webkit-animation: a 1s linear infinite;
     animation: a 1s linear infinite;
-    background: transparent url('node_modules/mediaelement/build/mejs-controls.svg') -160px -40px no-repeat;
+    background: transparent url('#{$me-controls-path}/mejs-controls.svg') -160px -40px no-repeat;
     display: block;
     height: 80px;
     width: 80px;
@@ -208,7 +208,7 @@
 }
 
 .mejs__button > button {
-    background: transparent url('node_modules/mediaelement/build/mejs-controls.svg');
+    background: transparent url('#{$me-controls-path}/mejs-controls.svg');
     border: 0;
     cursor: pointer;
     display: block;
