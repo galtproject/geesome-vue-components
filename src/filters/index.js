@@ -13,6 +13,9 @@ import Helper from "../services/helper";
 Vue.filter('prettyDate', Helper.beautyDate);
 Vue.filter('prettyPeriod', Helper.prettyPeriod);
 
+const upperFirst = require('lodash/upperFirst');
+const snakeCase = require('lodash/snakeCase');
+
 Vue.filter('prettySize', function (bytesSize) {
     bytesSize = parseInt(bytesSize);
 
@@ -37,6 +40,10 @@ Vue.filter('prettyFileName', function (str) {
         return str;
     }
     return str ? str.slice(0, 7) + "..." + str.slice(-6) : '';
+});
+
+Vue.filter('prettyName', function (str) {
+    return upperFirst(snakeCase(str).replace(/_/g, " "));
 });
 
 export default {};
