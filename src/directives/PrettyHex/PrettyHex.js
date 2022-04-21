@@ -9,6 +9,8 @@
 
 import Helper from "../../services/helper";
 
+const startsWith = require('lodash/startsWith');
+
 export default {
   name: 'pretty-hex',
   template: require('./PrettyHex.template'),
@@ -33,9 +35,9 @@ export default {
       } else {
         this.showHex = Helper.cutHex(this.hex, this.short);
       }
-      if (this.hex.length === 42) {
+      if (startsWith(this.hex, '0x') && this.hex.length === 42) {
         this.type = 'address';
-      } else if (this.hex.length === 66) {
+      } else if (startsWith(this.hex, '0x') && this.hex.length === 66) {
         this.type = 'transaction';
       }
     },
@@ -70,7 +72,7 @@ export default {
       } else if (this.type === 'transaction') {
         return this.getExplorerTxUrl();
       }
-      return null;
+      return this.hex;
     },
     user_wallet() {
       return this.$store && this.$store.state && this.$store.state.user_wallet;
