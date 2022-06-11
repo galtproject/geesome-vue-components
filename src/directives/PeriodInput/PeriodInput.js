@@ -15,6 +15,7 @@ export default {
         await this.$locale.waitForLoad();
 
         this.periodUnits = [
+            {value: 'seconds', name: this.getLocale('unit_seconds')},
             {value: 'hours', name: this.getLocale('unit_hours')},
             {value: 'days', name: this.getLocale('unit_days')}
         ];
@@ -28,18 +29,24 @@ export default {
             if (this.value >= this.dayUnit) {
                 this.periodUnit = 'days';
                 this.periodValue = this.value / this.dayUnit;
-            } else {
+            } else if (this.value >= this.hourUnit) {
                 this.periodUnit = 'hours';
                 this.periodValue = this.value / this.hourUnit;
+            } else {
+                this.periodUnit = 'seconds';
+                this.periodValue = this.value;
             }
         },
         convertDataToValue() {
-            if (this.periodUnit == 'days') {
+            if (this.periodUnit === 'days') {
                 this.$emit('input', this.dayUnit * this.periodValue);
                 this.$emit('change', this.dayUnit * this.periodValue);
-            } else {
+            } else if (this.periodUnit === 'hours') {
                 this.$emit('input', this.hourUnit * this.periodValue);
                 this.$emit('change', this.hourUnit * this.periodValue);
+            } else if (this.periodUnit === 'seconds') {
+                this.$emit('input', this.periodValue);
+                this.$emit('change', this.periodValue);
             }
         },
         getLocale(key, options = null) {
