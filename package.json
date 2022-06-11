@@ -11,7 +11,7 @@
   "dependencies": {
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git",
     "vue-material": "^1.0.0-beta-11",
-    "axios": "^0.21.0",
+    "axios": "^0.21.2",
     "bs58": "^4.0.1",
     "file-saver": "^2.0.2",
     "is-ipfs": "^2.0.0",
