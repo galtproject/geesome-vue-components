@@ -11,7 +11,7 @@ module.exports = `
         <md-field>
             <label v-locale="localeKey + '.period_unit'"></label>
 
-            <md-select v-model="periodUnit" @change="onChangePeriodInput">
+            <md-select v-model="periodUnit" @md-selected="onChangePeriodInput">
                 <md-option v-for="unit in periodUnits" :value="unit.value">{{unit.name}}</md-option>
             </md-select>
         </md-field>
