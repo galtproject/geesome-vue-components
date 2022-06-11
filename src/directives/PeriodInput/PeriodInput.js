@@ -49,6 +49,9 @@ export default {
                 this.$emit('change', this.periodValue);
             }
         },
+        onChangePeriodInput() {
+            this.convertDataToValue();
+        },
         getLocale(key, options = null) {
             return this.$locale.get(this.localeKey + "." + key, options);
         }
@@ -57,12 +60,9 @@ export default {
     computed: {},
 
     watch: {
-        periodUnit() {
-            this.convertDataToValue();
+        value() {
+            this.convertValueToData();
         },
-        periodValue() {
-            this.convertDataToValue();
-        }
     },
 
     data() {

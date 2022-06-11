@@ -3,7 +3,7 @@ module.exports = `
     <div class="md-layout-item md-size-60">
         <md-field>
             <label v-locale="localeLabel || (localeKey + '.period_value')"></label>
-            <md-input v-model="periodValue" required></md-input>
+            <md-input v-model="periodValue" required @change="onChangePeriodInput"></md-input>
         </md-field>
     </div>
 
@@ -11,7 +11,7 @@ module.exports = `
         <md-field>
             <label v-locale="localeKey + '.period_unit'"></label>
 
-            <md-select v-model="periodUnit">
+            <md-select v-model="periodUnit" @change="onChangePeriodInput">
                 <md-option v-for="unit in periodUnits" :value="unit.value">{{unit.name}}</md-option>
             </md-select>
         </md-field>
