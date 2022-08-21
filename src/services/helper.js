@@ -77,10 +77,12 @@ export default class Helper {
     document.body.removeChild(element);
   }
 
-  static beautyNumber(number) {
+  static prettyNumber(number) {
     number = parseFloat(number);
     number = Math.round(number * 100) / 100;
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    const split = number.toString().split('.');
+    split[0] = split[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return split.join('.');
   }
 
   static beautyDate(date) {

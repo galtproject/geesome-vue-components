@@ -46,4 +46,8 @@ Vue.filter('prettyName', function (str) {
     return upperFirst(snakeCase(str).replace(/_/g, " "));
 });
 
+Vue.filter('prettyNumber', function (str) {
+    return Helper.prettyNumber(str);
+});
+
 export default {};
