@@ -47,6 +47,9 @@ Vue.filter('prettyName', function (str) {
 });
 
 Vue.filter('prettyNumber', function (str) {
+    if (str !== 0 && !str) {
+        return '...';
+    }
     return Helper.prettyNumber(str);
 });
 
