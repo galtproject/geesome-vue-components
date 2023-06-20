@@ -10,40 +10,19 @@
 import Helper from "../../services/helper";
 
 const startsWith = require('lodash/startsWith');
+const isString = require('lodash/isString');
 
 export default {
   name: 'pretty-hex',
   template: require('./PrettyHex.template'),
   props: ['hex', 'to', 'href', 'full', 'short', 'prefix', 'localePrefix', 'explorerAddressUrl', 'explorerTxUrl', 'highlightCurrentUser', 'hideExplorer'],
   created() {
-    this.cutHex();
   },
   watch: {
-    async hex() {
-      this.cutHex();
-    }
   },
   methods: {
-    cutHex() {
-      if (!this.hex) {
-        this.showHex = "...";
-        this.type = null;
-        return;
-      }
-      if (this.full) {
-        this.showHex = this.hex;
-      } else {
-        this.showHex = Helper.cutHex(this.hex, this.short);
-      }
-      if (startsWith(this.hex, '0x') && this.hex.length === 42) {
-        this.type = 'address';
-      } else if (startsWith(this.hex, '0x') && this.hex.length === 66) {
-        this.type = 'transaction';
-      }
-    },
     copyToClipboard() {
       Helper.copyToClipboard(this.hex);
-
       this.$notify({
         type: 'success',
         title: this.$locale ? this.$locale.get('pretty_hex.copied_to_clipboard') : "Copied to Clipboard"
@@ -60,7 +39,19 @@ export default {
     },
     getExplorerTxUrl() {
       return ((this.$store && this.$store.state && this.$store.state.explorer_tx_url) ||  this.explorerTxUrl) + this.hex;
-    }
+    },
+    isIpfsHash(value) {
+      if (!value) {
+        return false;
+      }
+      return (startsWith(value, 'Qm') || this.isCidHash(value)) && /^\w+$/.test(value);
+    },
+    isCidHash(value) {
+      if (!value) {
+        return false;
+      }
+      return startsWith(value.codec, 'dag-') || (isString(value) && value.length === 59 && /^\w+$/.test(value) && (startsWith(value, 'zd') || startsWith(value, 'ba')));
+    },
   },
   computed: {
     hexUrl() {
@@ -71,6 +62,8 @@ export default {
         return this.getExplorerAddressUrl();
       } else if (this.type === 'transaction') {
         return this.getExplorerTxUrl();
+      } else if (this.type === 'ipfs') {
+        return '/ipfs/' + this.hex;
       }
       return this.hex;
     },
@@ -79,12 +72,25 @@ export default {
     },
     isCurrentUserWallet() {
       return this.user_wallet && this.hex && this.user_wallet.toLowerCase() === this.hex.toLowerCase();
+    },
+    type() {
+      if (startsWith(this.hex, '0x') && this.hex.length === 42) {
+        return 'address';
+      } else if (startsWith(this.hex, '0x') && this.hex.length === 66) {
+        return 'transaction';
+      } else if (this.isIpfsHash(this.hex)) {
+        return 'ipfs';
+      }
+    },
+    showHex() {
+      if (!this.hex) {
+        return "...";
+      }
+      return this.full ? this.hex : Helper.cutHex(this.hex, this.short);
     }
   },
   data() {
     return {
-      showHex: null,
-      type: null
     }
   }
 }
