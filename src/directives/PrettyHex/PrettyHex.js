@@ -63,7 +63,7 @@ export default {
       } else if (this.type === 'transaction') {
         return this.getExplorerTxUrl();
       } else if (this.type === 'ipfs') {
-        return '/ipfs/' + this.hex;
+        return location.host.includes('localhost') ? 'http://localhost:2052/ipfs/' + this.hex : '/ipfs/' + this.hex;
       }
       return this.hex;
     },
