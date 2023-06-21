@@ -12,7 +12,7 @@ module.exports = `
         </a>
     </span>
     <span v-else-if="hexUrl" @mouseover="mouseOver()" @mouseleave="mouseLeave()" class="current-user-address">
-        <a :href="href" target="_blank">
+        <a :href="hexUrl" target="_blank">
           <span v-if="prefix">{{prefix}}&nbsp;</span><span v-if="localePrefix" v-locale="localePrefix"></span>{{showHex}}
         </a>
     </span>
